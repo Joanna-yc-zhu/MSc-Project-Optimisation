@@ -87,8 +87,8 @@ println("I stop at second-stage cost components")
                         ωH * sum(pr[p, s] * (repair_cost) for p in P, s in S))
 
 # Constraints
+println("Hello! I passed Objective function")
 #@constraint(model, sum(xg[i] for i in ΩDG) <= length(ΩDG))  # Example constraint for DGs
-println("aaa")
 #@constraint(model, [i in ΩB, j in ΩB], xc[i, j] == xc1[i, j])  # Example constraint for switches
 @constraint(model, [i in ΩB, t in T, s in S, p in P],
     u[i, t, p, s] == (1 - xh[i]) * ζ0[i, t, p, s] + xh[i] * ζ1[i, t, p, s])
